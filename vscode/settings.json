@@ -1,0 +1,11 @@
+{
+    "remote.SSH.remotePlatform": {
+        "orw-michaels-r7": "linux"
+    },
+    "terminal.integrated.shell.linux": "/bin/csh",
+    "C_Cpp.updateChannel": "Insiders",
+    "window.zoomLevel": 0,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "files.trimFinalNewlines": true,
+    "editor.minimap.enabled": false
+}

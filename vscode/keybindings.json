@@ -1,0 +1,20 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    { "key": "` enter",          "command": "workbench.action.keepEditor" },
+    { "key": "`  Right Arrow",          "command": "workbench.action.nextEditor" },
+    { "key": "`  Left Arrow",         "command": "workbench.action.previousEditor" },
+    { "key": "` 0",                "command": "workbench.action.focusSideBar" },
+    { "key": "` 1",                "command": "workbench.action.focusFirstEditorGroup" },
+    { "key": "` 2",                "command": "workbench.action.focusSecondEditorGroup" },
+    { "key": "` 3",                "command": "workbench.action.focusThirdEditorGroup" },
+    { "key": "` 4",                "command": "workbench.action.focusFourthEditorGroup" },
+    { "key": "` 5",                "command": "workbench.action.focusFifthEditorGroup" },
+    { "key": "` 6",                "command": "workbench.action.focusSixthEditorGroup" },
+    { "key": "` 7",                "command": "workbench.action.focusSeventhEditorGroup" },
+    { "key": "` 8",                "command": "workbench.action.focusEighthEditorGroup" },
+    { "key": "` 9",                "command": "workbench.action.lastEditorInGroup" },
+    // - workbench.action.decreaseViewSize
+    { "key": "ctrl+Left Arrow",                "command": "workbench.action.decreaseViewSize" },
+    { "key": "ctrl+Right Arrow",                "command": "workbench.action.increaseViewSize" },
+
+]
