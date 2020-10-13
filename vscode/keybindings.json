@@ -14,7 +14,7 @@
     { "key": "` 8",                "command": "workbench.action.focusEighthEditorGroup" },
     { "key": "` 9",                "command": "workbench.action.lastEditorInGroup" },
     // - workbench.action.decreaseViewSize
-    { "key": "ctrl+Left Arrow",                "command": "workbench.action.decreaseViewSize" },
-    { "key": "ctrl+Right Arrow",                "command": "workbench.action.increaseViewSize" },
+    { "key": "ctrl+[",                "command": "workbench.action.decreaseViewSize" },
+    { "key": "ctrl+]",                "command": "workbench.action.increaseViewSize" },
 
 ]
