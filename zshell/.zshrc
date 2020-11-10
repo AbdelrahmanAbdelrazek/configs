@@ -49,8 +49,7 @@ zinit load junegunn/fzf-bin
 
 # Binary release in archive, from GitHub-releases page.
 # After automatic unpacking it provides program "fzf".
-zinit ice from"gh-r" as"program"
-zinit load junegunn/fzf-bin
+[[ ! -d ~/.fzf ]] && git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
 #-------------------------------------------------------------------------------------------------------------
 
 # [[ ! -d ~/.zinit ]] && sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)" && zinit self-update
