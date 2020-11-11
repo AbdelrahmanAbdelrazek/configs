@@ -9,7 +9,7 @@
 #------------------------------------------- zsh files--------------------------------------------------------
 [[ ! -f ~/.zaliases ]] || source ~/.zaliases
 [[ ! -f ~/.zwork ]] || source ~/.zwork
-
+[[ ! -f ~/.zhome]] || source ~/.zhome
 #------------------------------------------- tmux ------------------------------------------------------------
 [[ ! -d ~/.tmux/plugins/tpm ]] && git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && 1
 
@@ -17,7 +17,6 @@
 [[ ! -d ~/.powerlevel10k ]] && git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.powerlevel10k
 [[ ! -f ~/.powerlevel10k/powerlevel10k.zsh-theme ]] || source ~/.powerlevel10k/powerlevel10k.zsh-theme
 
-LANG=en_US.UTF-8
 #--------------------------------------------- zinit ---------------------------------------------------------
 [[ ! -d ~/.zinit ]] && mkdir ~/.zinit && git clone https://github.com/zdharma/zinit.git ~/.zinit/bin && zinit self-update
 [[ ! -f  ~/.zinit/bin/zinit.zsh ]] || source ~/.zinit/bin/zinit.zsh
@@ -25,25 +24,6 @@ autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma/fast-syntax-highlighting
-
-# sharkdp/fd
-zinit ice as"command" from"gh-r" mv"fd* -> fd" pick"fd/fd"
-zinit light sharkdp/fd
-alias find='fd'
-
-# sharkdp/bat
-zinit ice as"command" from"gh-r" mv"bat* -> bat" pick"bat/bat"
-zinit light sharkdp/bat
-alias cat='bat'
-
-# ogham/exa, replacement for ls
-zinit ice wait"2" lucid from"gh-r" as"program" mv"exa* -> exa"
-zinit light ogham/exa
-alias ls='exa'
-
-#fzf fuzzy finder
-zinit ice from"gh-r" as"program"
-zinit load junegunn/fzf-bin
 
 # Binary release in archive, from GitHub-releases page.
 # After automatic unpacking it provides program "fzf".
