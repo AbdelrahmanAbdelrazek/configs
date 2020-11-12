@@ -11,7 +11,6 @@ alias grep='grep --color=auto'
 alias untar='tar -zxvf'
 alias ls=ls --color=auto
 #------------------------------------TMUX------------------------------------------------------
-alias vim='/wv/amursi/usr/bin/vim'
 alias tmuxls='tmux ls'
 alias tmuxa='tmux attach -d -t'
 #------------------------------------------------SITUTIONAL-------------------------------------------------------
