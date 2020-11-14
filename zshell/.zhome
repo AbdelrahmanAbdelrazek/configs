@@ -1,3 +1,8 @@
+#DISPLAY
+export DISPLAY=:0
+
+#LANG for sshing to server
+export LANG=en_US.utf8
 # sharkdp/fd
 zinit ice as"command" from"gh-r" mv"fd* -> fd" pick"fd/fd"
 zinit light sharkdp/fd
