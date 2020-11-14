@@ -1,0 +1,7 @@
+bindkey "^[[3~" delete-char
+bindkey "^H" backward-delete-word
+bindkey "^[[3;5~" delete-word
+set -o ignoreeof #disable ctrl+del closing the window
+bindkey -r "^D"
+bindkey ";5D" vi-backward-blank-word
+bindkey ";5C" vi-forward-blank-word
