@@ -7,9 +7,9 @@ alias srczs='source /home/abdelrab/.zshrc'
 
 # delete hidden files generated from gedit
 alias r='rm -rf'
-alias grep='grep --color=auto'
+alias grep='grep --color=auto -n'
 alias untar='tar -zxvf'
-alias ls=ls --color=auto
+alias ls='ls --color=auto'
 #------------------------------------TMUX------------------------------------------------------
 alias tmuxls='tmux ls'
 alias tmuxa='tmux attach -d -t'
