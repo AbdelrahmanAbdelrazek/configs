@@ -79,6 +79,9 @@ disabled = false
 style = "bold green"
 symbol = " "
 
+[git_status]
+disabled = true
+
 [cmd_duration]
 show_notifications = true
 
