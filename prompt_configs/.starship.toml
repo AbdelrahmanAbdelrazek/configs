@@ -1,0 +1,193 @@
+add_newline = true
+#format = "$all"     # default
+
+# $cmd_duration\
+format = """
+[┌─>](bold green)\
+$username\
+$hostname\
+$shlvl\
+$kubernetes\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+$hg_branch\
+$docker_context\
+$package\
+$cmake\
+$dart\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$golang\
+$helm\
+$java\
+$julia\
+$nim\
+$nodejs\
+$ocaml\
+$perl\
+$php\
+$purescript\
+$python\
+$ruby\
+$rust\
+$swift\
+$terraform\
+$zig\
+$nix_shell\
+$conda\
+$memory_usage\
+$aws\
+$gcloud\
+$openstack\
+$crystal\
+$custom\
+$lua\
+$jobs\
+$battery\
+$time\
+$status\
+${custom.mgc}\
+$env_var\
+$line_break\
+[└─](bold green)$character """
+
+# ${custom.mgc}\
+
+# Replace the "❯" symbol in the prompt with "➜"
+[character]                            # The name of the module we are configuring is "character"
+success_symbol = "[>](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
+error_symbol = "[>](bold red)"
+#vicmd_symbol = "[<](bold green)"      # messes up the cursor mode indication
+
+[username]
+disabled = false
+show_always = true
+format = "[$user](bold blue)"
+
+[hostname]
+ssh_only = false
+format =  "[@](red)[$hostname](bold yellow) "
+#trim_at = ".companyname.com"
+disabled = false
+
+[git_branch]
+style = "bold green"
+symbol = " "
+
+[cmd_duration]
+show_notifications = true
+
+[directory]
+truncation_length = 5
+style = "bold fg:#FF3DBC"
+fish_style_pwd_dir_length = 4
+
+[env_var]
+variable = "MGC_HOME"
+default = "no mgc"
+style = "bold fg:#FF3DBC"
+format = " [$env_value](red)"
+disabled = true
+
+[memory_usage]
+threshold = 75
+symbol = ""
+# symbol = ""
+format = "$symbol [${ram_pct} ${ram}]($style) "
+disabled = false
+
+[time]
+use_12hr = true
+disabled = false
+time_format = "%I:%m%P"
+format = "[@](blue)[ $time]($style)"
+
+[custom.mgc]
+when = """ [[ $CURRENV == 'work' ]] && exit 0 || exit 1 """
+command = "get_mgc.sh"
+style = "fg:#FF3DBC"
+format = "\n[│─>](bold green)[using]($style) [$output](red)"
+# format = "[$symbol$output]($style) "
+disabled = false
+
+[aws]
+symbol = " "
+
+[battery]
+full_symbol = ""
+charging_symbol = ""
+discharging_symbol = ""
+format = "[$symbol $percentage]($style) "
+
+[[battery.display]]  # "bold red" style when capacity is between 0% and 10%
+threshold = 10
+style = "bold red"
+
+[[battery.display]]  # "bold yellow" style when capacity is between 10% and 30%
+threshold = 20
+style = "bold yellow"
+
+[conda]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[docker]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[nim]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[package]
+symbol = " "
+
+[perl]
+symbol = " "
+
+[php]
+symbol = " "
+
+[python]
+symbol = " "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[swift]
+symbol = "ﯣ "

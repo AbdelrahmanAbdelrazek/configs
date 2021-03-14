@@ -20,3 +20,4 @@ zinit light ogham/exa
 alias ls='exa'
 
 
+export CURRENV="home"

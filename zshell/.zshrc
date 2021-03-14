@@ -6,18 +6,25 @@
 ##  ███████╗███████║██║  ██║██║  ██║╚██████╗
 ##  ╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝
 #
-
+#echo ZSHRC
 #------------------------------------------- zsh files--------------------------------------------------------
-[[ ! -f ~/.zwork ]] || source ~/.zwork
 [[ ! -f ~/.zhome ]] || source ~/.zhome
+[[ ! -f ~/.zwork ]] || source ~/.zwork
 [[ ! -f ~/.zaliases ]] || source ~/.zaliases
 [[ ! -f ~/.zkey-bindings ]] || source ~/.zkey-bindings
+
 #------------------------------------------- tmux ------------------------------------------------------------
 [[ ! -d ~/.tmux/plugins/tpm ]] && git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && 1
 
-#--------------------------------------- powerlevel10k -------------------------------------------------------
-[[ ! -d ~/.powerlevel10k ]] && git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.powerlevel10k
-[[ ! -f ~/.powerlevel10k/powerlevel10k.zsh-theme ]] || source ~/.powerlevel10k/powerlevel10k.zsh-theme
+#--------------------------------------- PROMOT -------------------------------------------------------
+if which starship > /dev/null 2>&1; then
+    export STARSHIP_CONFIG=~/.starship.toml
+    eval "$(starship init zsh)"
+else
+    [[ ! -d ~/.powerlevel10k ]] && git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.powerlevel10k
+    [[ ! -f ~/.powerlevel10k/powerlevel10k.zsh-theme ]] || source ~/.powerlevel10k/powerlevel10k.zsh-theme
+    [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+ fi
 
 #--------------------------------------------- zinit ---------------------------------------------------------
 [[ ! -d ~/.zinit ]] && mkdir ~/.zinit && git clone https://github.com/zdharma/zinit.git ~/.zinit/bin && zinit self-update
