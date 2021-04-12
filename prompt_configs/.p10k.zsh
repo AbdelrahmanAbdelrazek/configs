@@ -107,6 +107,7 @@
     # battery               # internal battery
     # wifi                  # wifi speed
     # example               # example user-defined segment (see prompt_example function below)
+    my_mgc
   )
 
   # Defines character set used by powerlevel10k. It's best to let `p10k configure` set it for you.
@@ -1666,3 +1667,12 @@ typeset -g POWERLEVEL9K_CONFIG_FILE=${${(%):-%x}:a}
 
 (( ${#p10k_config_opts} )) && setopt ${p10k_config_opts[@]}
 'builtin' 'unset' 'p10k_config_opts'
+
+
+  ####################################[ my_mgc: print MGC_HOME ]####################################
+  # color.
+  function prompt_my_mgc(){
+    mgc=$(echo $MGC_HOME | awk -F/ic/ '{print $1}')
+    p10k segment -b 7 -f 0 -i $'\uf46d' -t "${mgc}"
+    #p10k segment -b 7 -f 0 -i $'\ue774' -t "${mgc}"
+  }
