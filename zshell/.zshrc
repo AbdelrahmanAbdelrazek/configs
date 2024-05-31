@@ -6,7 +6,20 @@
 ##  ███████╗███████║██║  ██║██║  ██║╚██████╗
 ##  ╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝
 #
-#echo ZSHRC
+
+#--------------------------------------------- zinit ---------------------------------------------------------
+[[ ! -d ~/.zinit ]] && mkdir ~/.zinit && git clone https://github.com/zdharma/zinit.git ~/.zinit/bin && source ~/.zinit/bin/zi.zsh && zi self-update
+[[ ! -f  ~/.zinit/bin/zi.zsh ]] || source ~/.zinit/bin/zi.zsh
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+zi light zsh-users/zsh-autosuggestions
+zi light zdharma/fast-syntax-highlighting
+
+if [[ $NEW_SYSTEM -eq 1 ]]; then
+    # sharkdp/fd
+    zi ice as"command" from"gh-r" mv"fd* -> fd" pick"fd/fd"
+    zi load sharkdp/fd
+fi
 #------------------------------------------- zsh files--------------------------------------------------------
 [[ ! -f ~/.zhome ]] || source ~/.zhome
 [[ ! -f ~/.zwork ]] || source ~/.zwork
@@ -26,23 +39,6 @@ else
     [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
  fi
 
-#--------------------------------------------- zinit ---------------------------------------------------------
-[[ ! -d ~/.zinit ]] && mkdir ~/.zinit && git clone https://github.com/zdharma/zinit.git ~/.zinit/bin && zinit self-update
-[[ ! -f  ~/.zinit/bin/zinit.zsh ]] || source ~/.zinit/bin/zinit.zsh
-autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
-zinit light zsh-users/zsh-autosuggestions
-zinit light zdharma/fast-syntax-highlighting
-
-if [[ $NEW_SYSTEM -eq 1 ]]; then
-    # sharkdp/fd
-    zinit ice as"command" from"gh-r" mv"fd* -> fd" pick"fd/fd"
-    zinit load sharkdp/fd
-fi
-
-# Binary release in archive, from GitHub-releases page.
-# After automatic unpacking it provides program "fzf".
-[[ ! -d ~/.fzf ]] && git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
 #-------------------------------------------------------------------------------------------------------------
 HISTFILE=~/.zhist
 SAVEHIST=1000000000
@@ -55,3 +51,13 @@ export EXA_COLORS='*.C=00;33:*.c=00;33:*.h=00;35:*.H=00;35:*:*.log=00;36:*.rdb=0
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Load a few important annexes, without Turbo
+# (this is currently required for annexes)
+zinit light-mode for \
+    zdharma-continuum/zinit-annex-as-monitor \
+    zdharma-continuum/zinit-annex-bin-gem-node \
+    zdharma-continuum/zinit-annex-patch-dl \
+    zdharma-continuum/zinit-annex-rust
+
+### End of Zinit's installer chunk
