@@ -52,12 +52,3 @@ export EXA_COLORS='*.C=00;33:*.c=00;33:*.h=00;35:*.H=00;35:*:*.log=00;36:*.rdb=0
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Load a few important annexes, without Turbo
-# (this is currently required for annexes)
-zinit light-mode for \
-    zdharma-continuum/zinit-annex-as-monitor \
-    zdharma-continuum/zinit-annex-bin-gem-node \
-    zdharma-continuum/zinit-annex-patch-dl \
-    zdharma-continuum/zinit-annex-rust
-
-### End of Zinit's installer chunk
